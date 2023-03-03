@@ -1,0 +1,25 @@
+name: 'Get package.json info Github action'
+author: 'Luiz Felipe Laviola'
+description: |-
+  Get the name and version of a package.json file and outputs it.
+
+branding:
+  icon: 'package'
+  color: 'white'
+
+inputs:
+  path:
+    description: The path to the folder containing the package.json file
+    required: true
+    default: '.'
+
+outputs:
+  name:
+    description: The name of the package
+    
+  version:
+    description: The version of the package
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
