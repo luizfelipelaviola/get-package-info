@@ -10,7 +10,7 @@ async function main() {
     if (!fs.existsSync(pathInput)) throw new Error(`File ${file} does not exist`);
 
     console.log(`🆗 Reading ${file}`);
-    const data = await import(file);
+    const data = JSON.parse(fs.readFileSync(file).toString());
 
     console.log(`✅ Got app "${data.name}" with version "${data.version}"`);
     setOutput('name', data.name);
