@@ -4,10 +4,10 @@ import path from 'node:path';
 
 async function main() {
   try {
-    const pathInput = getInput('path');
+    const pathInput = getInput('path', { required: false }) || '.';
 
-    const file = path.resolve(__dirname, pathInput, 'package.json');
-    if (!fs.existsSync(file)) throw new Error(`File ${file} does not exist`);
+    const file = path.join(pathInput, 'package.json');
+    if (!fs.existsSync(pathInput)) throw new Error(`File ${file} does not exist`);
 
     console.log(`🆗 Reading ${file}`);
     const data = await import(file);
