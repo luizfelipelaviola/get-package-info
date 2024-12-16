@@ -13,8 +13,10 @@ async function main() {
     const data = JSON.parse(fs.readFileSync(file).toString());
 
     console.log(`✅ Got app "${data.name}" with version "${data.version}"`);
+
     setOutput('name', data.name);
     setOutput('version', data.version);
+    setOutput('data', JSON.stringify(data));
   } catch (err) {
     if (err instanceof Error) setFailed(err.message);
     else setFailed('Unknown error');

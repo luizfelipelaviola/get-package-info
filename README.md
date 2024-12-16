@@ -42,6 +42,7 @@ jobs:
 |----------|---------|---------|
 | name     | the name of the package.json file | my-package |
 | version  | the version of the package.json file | 1.0.0 |
+| data     | the content of the package.json file | '{"name":"get-package-info","version":"1.0.0"}' |
 
 ## Notes
 

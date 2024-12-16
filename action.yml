@@ -20,6 +20,9 @@ outputs:
   version:
     description: The version of the package
 
+  data:
+    description: The package.json content
+
 runs:
-  using: 'node16'
+  using: 'node22'
   main: 'dist/index.js'
